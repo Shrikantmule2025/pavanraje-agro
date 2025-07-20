@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: pavanraje-agro
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
+    envVars:
+      - key: FLASK_ENV
+        value: production
+
+cd pavanraje_agro_portal
+git init
+git remote add origin https://github.com/Shrikantmule2025/pavanraje-agro.git
+git add .
+git commit -m "Initial commit with Flask project"
+git branch -M main
+git push -u origin main
+
